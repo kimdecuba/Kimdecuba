@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: #F7F2E7; color: #16283C; }
+  a { color: #16283C; }
+  a:hover { color: #A64F33; }
+  ::selection { background: #C96F4E; color: #F7F2E7; }
+</style>
+</helmet>
+<div style="font-family: 'DM Sans', system-ui, sans-serif; background: #F7F2E7; color: #16283C; overflow-x: hidden;">
+
+  <header style="position: sticky; top: 0; z-index: 60; background: rgba(247,242,231,0.94); backdrop-filter: blur(12px);">
+    <div style="max-width: 1440px; margin: 0 auto; padding: 22px 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px;">
+      <a href="#top" style="text-decoration: none; display: flex; align-items: center; gap: 14px;">
+        <img src="../assets/kim-de-cuba-mark.png" alt="Kim de Cuba" style="height: 46px; width: auto; display: block; mix-blend-mode: multiply;" />
+        <span style="display: flex; flex-direction: column; line-height: 1;">
+          <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 19px; letter-spacing: 0.1em; text-transform: uppercase;">Kim de Cuba</span>
+          <span style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #A64F33; margin-top: 7px;">From Idea to Action.</span>
+        </span>
+      </a>
+      <nav style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;">
+        <a href="#about" style="text-decoration: none;">{{ t.navAbout }}</a>
+        <a href="#services" style="text-decoration: none;">{{ t.navServices }}</a>
+        <a href="#process" style="text-decoration: none;">{{ t.navProcess }}</a>
+        <a href="#faq" style="text-decoration: none;">FAQ</a>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <button onClick="{{ onEn }}" style="background: none; border: 0; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.18em; padding: 3px 1px; color: {{ enColor }}; border-bottom: 1px solid {{ enLine }};">EN</button>
+          <span style="color: #5A6B7A;">/</span>
+          <button onClick="{{ onEs }}" style="background: none; border: 0; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.18em; padding: 3px 1px; color: {{ esColor }}; border-bottom: 1px solid {{ esLine }};">ES</button>
+        </div>
+        <a href="#book" style="text-decoration: none; background: #C96F4E; color: #F7F2E7; padding: 11px 22px; border-radius: 100px; letter-spacing: 0.16em; white-space: nowrap; font-weight: 500;" style-hover="background: #B0553A;">{{ t.cta }}</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="top" style="max-width: 1440px; margin: 0 auto; padding: 104px 40px 0;">
+    <h1 style="font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(42px, 8vw, 118px); line-height: 1.0; margin: 0; letter-spacing: -0.025em; max-width: 19ch; text-wrap: balance;">{{ t.h1a }} <em style="font-style: italic; color: #A64F33;">{{ t.h1b }}</em></h1>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 32px 64px; margin-top: 72px; padding-bottom: 28px; border-bottom: 1px solid rgba(22,40,60,0.22);">
+      <p style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #A64F33; margin: 0;">{{ t.eyebrow }}</p>
+      <p style="font-size: 17px; line-height: 1.7; color: #3D5063; margin: 0; max-width: 46ch; text-wrap: pretty;">{{ t.heroSub }}</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 12px; align-content: start;">
+        <a href="#book" style="text-decoration: none; background: #C96F4E; color: #F7F2E7; padding: 16px 30px; border-radius: 100px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500;" style-hover="background: #B0553A;">{{ t.cta }}</a>
+        <a href="#services" style="text-decoration: none; border: 1px solid rgba(22,40,60,0.35); color: #9A4A2E; padding: 16px 30px; border-radius: 100px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;" style-hover="background: rgba(201,111,78,0.1);">{{ t.ctaAlt }}</a>
+      </div>
+    </div>
+  </section>
+
+  <figure style="margin: 0; padding: 72px 0 0;">
+    <img src="https://picsum.photos/id/1027/2200/1000" alt="Placeholder portrait" style="width: 100%; aspect-ratio: 2.2/1; object-fit: cover; display: block; filter: saturate(0.78) contrast(1.03);" />
+    <figcaption style="max-width: 1440px; margin: 0 auto; padding: 12px 40px; font-family: ui-monospace, monospace; font-size: 11px; color: #5A6B7A;">temporary stock photo — replace with portrait of Kim</figcaption>
+  </figure>
+
+  <section id="about" style="max-width: 1440px; margin: 0 auto; padding: 112px 40px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 40px 72px;">
+      <div style="display: flex; align-items: baseline; gap: 14px;">
+        <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(30px, 4vw, 50px); margin: 0; line-height: 1;">{{ t.aboutWord }}</h2>
+        <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 15px; color: #A64F33;">(§1)</span>
+      </div>
+      <div style="grid-column: span 2; min-width: 0;">
+        <p style="font-size: clamp(19px, 2vw, 25px); line-height: 1.55; margin: 0; text-wrap: pretty;"><strong style="font-weight: 400; color: #9A4A2E;">{{ t.aboutLabel }}</strong>&nbsp;&nbsp;{{ t.aboutLead }}</p>
+        <p style="font-size: 16px; line-height: 1.85; color: #3D5063; margin: 28px 0 0; max-width: 64ch; text-wrap: pretty;">{{ t.aboutBody }}</p>
+        <p style="font-size: 11px; letter-spacing: 0.2em; text-transform: lowercase; color: #5A6B7A; margin: 36px 0 0;">{{ t.aboutTag }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" style="background: #E6EAE0;">
+    <div style="max-width: 1440px; margin: 0 auto; padding: 112px 40px;">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 32px 72px; margin-bottom: 64px;">
+        <div style="display: flex; align-items: baseline; gap: 14px;">
+          <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(30px, 4vw, 50px); margin: 0; line-height: 1;">{{ t.servicesWord }}</h2>
+          <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 15px; color: #9A4A2E;">(§2)</span>
+          <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 15px; color: #9A4A2E; margin-left: auto;">(06)</span>
+        </div>
+        <p style="font-size: clamp(18px, 1.8vw, 23px); line-height: 1.6; margin: 0; max-width: 40ch; text-wrap: pretty;"><strong style="font-weight: 400; color: #9A4A2E;">{{ t.servicesLabel }}</strong>&nbsp;&nbsp;{{ t.servicesNote }}</p>
+      </div>
+      <div style="display: flex; flex-direction: column;">
+        <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
+          <div style="border-top: 1px solid rgba(22,40,60,0.22); padding: 36px 0;" style-hover="background: rgba(201,111,78,0.07);">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr)); gap: 20px 56px; align-items: start;">
+              <div style="display: flex; gap: 20px; align-items: baseline; min-width: 0;">
+                <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 14px; color: #9A4A2E; flex-shrink: 0;">{{ s.num }}</span>
+                <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(22px, 2.3vw, 31px); margin: 0; line-height: 1.15;">{{ s.title }}</h3>
+              </div>
+              <p style="font-size: 15px; line-height: 1.75; color: #3D5063; margin: 0; text-wrap: pretty;">{{ s.desc }}</p>
+              <div style="display: flex; flex-direction: column; gap: 10px; align-items: flex-start;">
+                <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 27px; color: #9A4A2E;">{{ s.price }}</span>
+                <span style="font-size: 12px; letter-spacing: 0.04em; color: #3D5063;">{{ s.priceNote }}</span>
+                <sc-if value="{{ s.available }}" hint-placeholder-val="{{ true }}">
+                  <a href="#book" onClick="{{ s.onPick }}" style="text-decoration: none; margin-top: 4px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #16283C; background: rgba(201,111,78,0.2); padding: 10px 20px; border-radius: 100px;" style-hover="background: #C96F4E;">{{ t.bookThis }}</a>
+                </sc-if>
+                <sc-if value="{{ s.comingSoon }}" hint-placeholder-val="{{ false }}">
+                  <span style="margin-top: 4px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: #5A6B7A;">{{ t.comingSoon }}</span>
+                </sc-if>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+        <div style="border-top: 1px solid rgba(22,40,60,0.22);"></div>
+      </div>
+      <p style="font-size: 12px; color: #3D5063; margin: 26px 0 0;">{{ t.priceDisclaimer }}</p>
+    </div>
+  </section>
+
+  <section style="max-width: 1180px; margin: 0 auto; padding: 128px 40px; text-align: center;">
+    <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(26px, 3.6vw, 46px); line-height: 1.35; margin: 0; text-wrap: balance;">{{ t.quoteA }} <em style="font-style: italic; color: #A64F33;">{{ t.quoteB }}</em> {{ t.quoteC }}</p>
+    <p style="font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #5A6B7A; margin: 36px 0 0;">Kim de Cuba</p>
+  </section>
+
+  <sc-if value="{{ showProcess }}" hint-placeholder-val="{{ true }}">
+  <section id="process" style="max-width: 1440px; margin: 0 auto; padding: 0 40px 112px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 40px 72px; border-top: 1px solid rgba(22,40,60,0.22); padding-top: 48px;">
+      <div style="display: flex; align-items: baseline; gap: 14px;">
+        <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(30px, 4vw, 50px); margin: 0; line-height: 1;">{{ t.processWord }}</h2>
+        <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 15px; color: #A64F33;">(§3)</span>
+      </div>
+      <div style="grid-column: span 2; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 210px), 1fr)); gap: 40px;">
+        <sc-for list="{{ steps }}" as="st" hint-placeholder-count="3">
+          <div>
+            <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 34px; color: #6F8068;">{{ st.num }}</span>
+            <h3 style="font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: 21px; margin: 14px 0 12px;">{{ st.title }}</h3>
+            <p style="font-size: 15px; line-height: 1.8; color: #3D5063; margin: 0; text-wrap: pretty;">{{ st.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ showFaq }}" hint-placeholder-val="{{ true }}">
+  <section id="faq" style="max-width: 1440px; margin: 0 auto; padding: 0 40px 112px;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 40px 72px; border-top: 1px solid rgba(22,40,60,0.22); padding-top: 48px;">
+      <div style="display: flex; align-items: baseline; gap: 14px;">
+        <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(30px, 4vw, 50px); margin: 0; line-height: 1;">{{ t.faqWord }}</h2>
+        <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 15px; color: #A64F33;">(§4)</span>
+      </div>
+      <div style="grid-column: span 2; min-width: 0; display: flex; flex-direction: column;">
+        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="5">
+          <div style="border-bottom: 1px solid rgba(22,40,60,0.16);">
+            <button onClick="{{ f.onToggle }}" style="width: 100%; background: none; border: 0; padding: 24px 0; display: flex; align-items: center; justify-content: space-between; gap: 24px; cursor: pointer; text-align: left; font-family: 'DM Serif Display', Georgia, serif; font-size: 20px; color: #16283C;" style-hover="color: #A64F33;">
+              {{ f.q }}
+              <span style="font-family: 'DM Sans', sans-serif; font-size: 22px; color: #A64F33; flex-shrink: 0;">{{ f.sign }}</span>
+            </button>
+            <sc-if value="{{ f.isOpen }}" hint-placeholder-val="{{ false }}">
+              <p style="font-size: 16px; line-height: 1.85; color: #3D5063; margin: 0 0 26px; max-width: 64ch; text-wrap: pretty;">{{ f.a }}</p>
+            </sc-if>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+  </sc-if>
+
+  <section id="book" style="background: #16283C; color: #F7F2E7;">
+    <div style="max-width: 1440px; margin: 0 auto; padding: 112px 40px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr)); gap: 48px 72px; align-items: start;">
+      <div>
+        <div style="display: flex; align-items: baseline; gap: 14px; margin-bottom: 28px;">
+          <h2 style="font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; font-size: clamp(30px, 4vw, 50px); margin: 0; line-height: 1;">{{ t.bookWord }}</h2>
+          <span style="font-family: 'DM Serif Display', Georgia, serif; font-size: 15px; color: #9DB0C2;">(§5)</span>
+        </div>
+        <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: clamp(22px, 2.4vw, 32px); line-height: 1.35; margin: 0; max-width: 26ch; text-wrap: pretty;">{{ t.bookTitle }}</p>
+        <p style="font-size: 16px; line-height: 1.8; color: #B9C7D4; margin: 24px 0 0; max-width: 44ch; text-wrap: pretty;">{{ t.bookBody }}</p>
+        <div style="margin-top: 44px; display: flex; flex-direction: column; gap: 22px;">
+          <div>
+            <a href="{{ mailto }}" style="color: #F7F2E7; text-decoration: none; font-size: 17px; border-bottom: 1px solid rgba(247,242,231,0.45); padding-bottom: 3px;" style-hover="color: #FFFFFF;">{{ contactEmail }}</a>
+            <p style="font-size: 11px; letter-spacing: 0.2em; color: #B9C7D4; margin: 12px 0 0;">{{ t.tagContact }}</p>
+          </div>
+          <div>
+            <p style="font-size: 17px; margin: 0;">{{ t.location }}</p>
+            <p style="font-size: 11px; letter-spacing: 0.2em; color: #B9C7D4; margin: 12px 0 0;">{{ t.tagVisit }}</p>
+          </div>
+        </div>
+      </div>
+      <div style="background: #F7F2E7; padding: 40px 36px;">
+        <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
+          <div style="padding: 44px 0; text-align: center;">
+            <p style="font-family: 'DM Serif Display', Georgia, serif; font-size: 26px; margin: 0 0 12px; color: #9A4A2E;">{{ t.sentTitle }}</p>
+            <p style="font-size: 15px; color: #3D5063; margin: 0;">{{ t.sentBody }}</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
+          <div style="display: flex; flex-direction: column; gap: 22px;">
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <label for="v3-name" style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #9A4A2E;">{{ t.fName }}</label>
+              <input id="v3-name" type="text" value="{{ name }}" onChange="{{ onName }}" placeholder="{{ t.pName }}" style="border: 0; border-bottom: 1px solid rgba(22,40,60,0.3); background: none; padding: 10px 0; font-family: 'DM Sans', sans-serif; font-size: 16px; color: #16283C; outline: none;" style-focus="border-color: #A64F33;" />
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <label for="v3-email" style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #9A4A2E;">{{ t.fEmail }}</label>
+              <input id="v3-email" type="email" value="{{ email }}" onChange="{{ onEmail }}" placeholder="you@email.com" style="border: 0; border-bottom: 1px solid rgba(22,40,60,0.3); background: none; padding: 10px 0; font-family: 'DM Sans', sans-serif; font-size: 16px; color: #16283C; outline: none;" style-focus="border-color: #A64F33;" />
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <span style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #9A4A2E;">{{ t.fInterest }}</span>
+              <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <sc-for list="{{ picks }}" as="p" hint-placeholder-count="6">
+                  <button onClick="{{ p.onPick }}" style="border: 1px solid rgba(22,40,60,0.35); background: {{ p.bg }}; color: {{ p.fg }}; border-radius: 100px; padding: 9px 16px; font-family: 'DM Sans', sans-serif; font-size: 13px; cursor: pointer;">{{ p.title }}</button>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+              <label for="v3-msg" style="font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: #9A4A2E;">{{ t.fWhere }}</label>
+              <textarea id="v3-msg" rows="3" value="{{ msg }}" onChange="{{ onMsg }}" placeholder="{{ t.pWhere }}" style="border: 1px solid rgba(22,40,60,0.3); background: #FCF9F2; padding: 12px; font-family: 'DM Sans', sans-serif; font-size: 15px; color: #16283C; outline: none; resize: vertical;" style-focus="border-color: #A64F33;"></textarea>
+            </div>
+            <button onClick="{{ onSend }}" style="background: #16283C; color: #F7F2E7; border: 0; border-radius: 100px; padding: 17px 28px; font-family: 'DM Sans', sans-serif; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer;" style-hover="background: #C96F4E;">{{ t.fSend }}</button>
+            <p style="font-size: 12px; color: #3D5063; margin: 0;">{{ t.fConsent }}</p>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #F7F2E7;">
+    <div style="max-width: 1440px; margin: 0 auto; padding: 56px 40px; display: flex; flex-wrap: wrap; gap: 28px; justify-content: space-between; align-items: flex-end;">
+      <div style="display: flex; align-items: flex-end; gap: 20px;">
+        <img src="../assets/kim-de-cuba-logo.png" alt="Kim de Cuba" style="height: 96px; width: auto; display: block; mix-blend-mode: multiply;" />
+        <div>
+          <p style="font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: #A64F33; margin: 0 0 10px;">From Idea to Action.</p>
+          <p style="font-size: 12px; color: #5A6B7A; margin: 0;">© 2026 — Paradera, Aruba</p>
+        </div>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 24px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;">
+        <a href="#services" style="text-decoration: none;">{{ t.navServices }}</a>
+        <a href="#faq" style="text-decoration: none;">FAQ</a>
+        <a href="#book" style="text-decoration: none;">{{ t.bookWord }}</a>
+        <a href="{{ mailto }}" style="text-decoration: none;">Email</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showProcess&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showFaq&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;contactEmail&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;info@kimdecuba.com&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contact&quot;}}">
+const COPY = {
+  en: {
+    navAbout: "About", navServices: "Services", navProcess: "How it works", cta: "Book a session", ctaAlt: "See services",
+    eyebrow: "Clarity. Strategy. Action.",
+    h1a: "Turn your idea into a clear", h1b: "plan of action.",
+    heroSub: "Kim de Cuba helps aspiring and emerging entrepreneurs turn their ideas, skills and potential into clear strategies and actionable next steps.",
+    aboutWord: "Kim", aboutLabel: "About.",
+    aboutLead: "Personalized guidance, business and content strategy, workshops and training for people building something of their own.",
+    aboutBody: "Most ideas do not fail for lack of ambition. They stall because there is no clear direction and no obvious next step. Every session is built around where you are right now, what you want to build, and what you can realistically do next.",
+    aboutTag: "approach.",
+    servicesWord: "Work", servicesLabel: "Services.",
+    servicesNote: "Not sure which one fits? Start with a single session and we decide from there.",
+    bookThis: "Book this", comingSoon: "Coming soon — waitlist",
+    priceDisclaimer: "Prices in US dollars, excluding tax. Payment plans possible for intensives and programs.",
+    quoteA: "An idea only becomes a business", quoteB: "the moment", quoteC: "you know your next step.",
+    processWord: "Process",
+    faqWord: "Questions",
+    bookWord: "Book", bookTitle: "Let's start with your next step.",
+    bookBody: "Tell me what you are working on and which service you are interested in. You get a reply within two working days with available times.",
+    location: "Paradera, Aruba — online or in person",
+    tagContact: "contact.", tagVisit: "visit.",
+    sentTitle: "Thank you — request received.", sentBody: "You will hear back within two working days.",
+    fName: "Name", pName: "Your name", fEmail: "Email", fInterest: "What are you interested in?",
+    fWhere: "Where are you now?", pWhere: "An idea, a business already running, something in between...",
+    fSend: "Send booking request", fConsent: "By sending this you agree to be contacted by email about your session.",
+    steps: [
+      { num: "01", title: "Book", desc: "Pick the service that fits where you are and send a short request. No long intake form." },
+      { num: "02", title: "Clarify", desc: "We look at your idea, your skills and your goals, and name what is actually in the way." },
+      { num: "03", title: "Act", desc: "You leave with a strategy and concrete next steps you can start on this week." }
+    ],
+    services: [
+      { desc: "Individual 1:1 sessions for people who need clarity, direction and practical next steps.", price: "$125", priceNote: "per 75-minute session" },
+      { desc: "Multi-session packages that provide deeper guidance, strategy and accountability.", price: "$450", priceNote: "4 sessions over 8 weeks" },
+      { desc: "More comprehensive guidance for entrepreneurs who need support developing their business, offers, target audience, positioning and content strategy.", price: "from $950", priceNote: "project based, 4-6 weeks" },
+      { desc: "Paid workshops focused on entrepreneurship, business development, content strategy and turning ideas into action.", price: "$65", priceNote: "per person, half day" },
+      { desc: "Structured group programs for aspiring and emerging entrepreneurs.", price: "$395", priceNote: "per participant, 6 weeks" },
+      { desc: "A membership or community model that can provide ongoing education, accountability, resources, networking and support.", price: "$25", priceNote: "per month (planned)" }
+    ],
+    titles: ["Idea-to-Action Sessions", "Idea-to-Action Intensives", "Business & Content Strategy", "Workshops", "Training Programs", "Idea-to-Action Community"],
+    faqs: [
+      { q: "I do not have a clear idea yet. Can I still book?", a: "Yes. That is often the starting point. A first session is used to get clarity on the direction before anything gets built." },
+      { q: "Which service should I choose?", a: "If you want direction quickly, start with a single Idea-to-Action Session. If you know you need structure and accountability over time, an Intensive or Business & Content Strategy fits better." },
+      { q: "Are sessions online or in person?", a: "Both. Online sessions are available anywhere; in person sessions take place in Paradera, Aruba." },
+      { q: "How does payment work?", a: "You receive an invoice after your booking is confirmed. Intensives, strategy projects and training programs can be paid in instalments." },
+      { q: "Do you also work with businesses that already run?", a: "Yes. Emerging entrepreneurs who already sell but need positioning, offers or content strategy are a large part of the work." }
+    ]
+  },
+  es: {
+    navAbout: "Sobre mí", navServices: "Servicios", navProcess: "Cómo funciona", cta: "Reservar sesión", ctaAlt: "Ver servicios",
+    eyebrow: "Claridad. Estrategia. Acción.",
+    h1a: "Convierte tu idea en un", h1b: "plan de acción claro.",
+    heroSub: "Kim de Cuba ayuda a emprendedores que empiezan y a los que ya están creciendo a convertir sus ideas, habilidades y potencial en estrategias claras y próximos pasos concretos.",
+    aboutWord: "Kim", aboutLabel: "Sobre mí.",
+    aboutLead: "Acompañamiento personalizado, estrategia de negocio y contenido, talleres y formación para personas que están construyendo algo propio.",
+    aboutBody: "La mayoría de las ideas no fracasan por falta de ambición. Se quedan paradas porque no hay una dirección clara ni un próximo paso evidente. Cada sesión se construye alrededor de dónde estás hoy, qué quieres crear y qué puedes hacer de forma realista a continuación.",
+    aboutTag: "método.",
+    servicesWord: "Trabajo", servicesLabel: "Servicios.",
+    servicesNote: "¿No sabes cuál te conviene? Empieza con una sola sesión y lo decidimos desde ahí.",
+    bookThis: "Reservar", comingSoon: "Próximamente — lista de espera",
+    priceDisclaimer: "Precios en dólares estadounidenses, sin impuestos. Pago en cuotas posible para intensivos y programas.",
+    quoteA: "Una idea se convierte en negocio", quoteB: "en el momento", quoteC: "en que sabes tu próximo paso.",
+    processWord: "Proceso",
+    faqWord: "Preguntas",
+    bookWord: "Reservar", bookTitle: "Empecemos por tu próximo paso.",
+    bookBody: "Cuéntame en qué estás trabajando y qué servicio te interesa. Recibes respuesta en un plazo de dos días laborables con los horarios disponibles.",
+    location: "Paradera, Aruba — online o presencial",
+    tagContact: "contacto.", tagVisit: "ubicación.",
+    sentTitle: "Gracias — solicitud recibida.", sentBody: "Te responderé en un plazo de dos días laborables.",
+    fName: "Nombre", pName: "Tu nombre", fEmail: "Email", fInterest: "¿Qué te interesa?",
+    fWhere: "¿En qué punto estás?", pWhere: "Una idea, un negocio en marcha, algo intermedio...",
+    fSend: "Enviar solicitud", fConsent: "Al enviar aceptas que te contacte por email sobre tu sesión.",
+    steps: [
+      { num: "01", title: "Reserva", desc: "Elige el servicio que encaja con tu momento y envía una solicitud corta. Sin formularios largos." },
+      { num: "02", title: "Claridad", desc: "Revisamos tu idea, tus habilidades y tus objetivos, y ponemos nombre a lo que realmente te está frenando." },
+      { num: "03", title: "Acción", desc: "Sales con una estrategia y próximos pasos concretos que puedes empezar esta misma semana." }
+    ],
+    services: [
+      { desc: "Sesiones individuales 1:1 para personas que necesitan claridad, dirección y próximos pasos prácticos.", price: "$125", priceNote: "por sesión de 75 minutos" },
+      { desc: "Paquetes de varias sesiones con acompañamiento más profundo, estrategia y seguimiento.", price: "$450", priceNote: "4 sesiones en 8 semanas" },
+      { desc: "Acompañamiento más completo para emprendedores que necesitan desarrollar su negocio, sus ofertas, su público objetivo, su posicionamiento y su estrategia de contenido.", price: "desde $950", priceNote: "por proyecto, 4-6 semanas" },
+      { desc: "Talleres de pago sobre emprendimiento, desarrollo de negocio, estrategia de contenido y cómo pasar de la idea a la acción.", price: "$65", priceNote: "por persona, media jornada" },
+      { desc: "Programas de grupo estructurados para emprendedores que empiezan o están creciendo.", price: "$395", priceNote: "por participante, 6 semanas" },
+      { desc: "Un modelo de membresía o comunidad con formación continua, seguimiento, recursos, networking y apoyo.", price: "$25", priceNote: "al mes (previsto)" }
+    ],
+    titles: ["Sesiones Idea-to-Action", "Intensivos Idea-to-Action", "Estrategia de Negocio y Contenido", "Talleres", "Programas de Formación", "Comunidad Idea-to-Action"],
+    faqs: [
+      { q: "Todavía no tengo la idea clara. ¿Puedo reservar?", a: "Sí. Muchas veces ese es justo el punto de partida. La primera sesión sirve para tener claridad sobre la dirección antes de construir nada." },
+      { q: "¿Qué servicio elijo?", a: "Si quieres dirección rápido, empieza con una Sesión Idea-to-Action. Si sabes que necesitas estructura y seguimiento en el tiempo, encaja mejor un Intensivo o Estrategia de Negocio y Contenido." },
+      { q: "¿Las sesiones son online o presenciales?", a: "Las dos opciones. Online desde cualquier lugar; las sesiones presenciales son en Paradera, Aruba." },
+      { q: "¿Cómo funciona el pago?", a: "Recibes una factura una vez confirmada la reserva. Los intensivos, los proyectos de estrategia y los programas de formación se pueden pagar en cuotas." },
+      { q: "¿Trabajas también con negocios que ya funcionan?", a: "Sí. Los emprendedores que ya venden pero necesitan posicionamiento, ofertas o estrategia de contenido son una gran parte del trabajo." }
+    ]
+  }
+};
+
+class Component extends DCLogic {
+  state = { lang: "en", open: -1, pick: "", name: "", email: "", msg: "", sent: false };
+
+  renderVals() {
+    const { lang, open, pick, sent } = this.state;
+    const t = COPY[lang];
+    const email = this.props.contactEmail ?? "info@kimdecuba.com";
+    const services = t.services.map((s, i) => ({
+      ...s,
+      num: String(i + 1).padStart(2, "0"),
+      title: t.titles[i],
+      available: i < 5,
+      comingSoon: i === 5,
+      onPick: () => this.setState({ pick: t.titles[i] })
+    }));
+    return {
+      t,
+      showProcess: this.props.showProcess ?? true,
+      showFaq: this.props.showFaq ?? true,
+      contactEmail: email,
+      mailto: "mailto:" + email,
+      onEn: () => this.setState({ lang: "en" }),
+      onEs: () => this.setState({ lang: "es" }),
+      enColor: lang === "en" ? "#16283C" : "#5A6B7A",
+      esColor: lang === "es" ? "#16283C" : "#5A6B7A",
+      enLine: lang === "en" ? "#C96F4E" : "transparent",
+      esLine: lang === "es" ? "#C96F4E" : "transparent",
+      services,
+      steps: t.steps,
+      faqs: t.faqs.map((f, i) => ({
+        ...f,
+        isOpen: open === i,
+        sign: open === i ? "\u2212" : "+",
+        onToggle: () => this.setState({ open: open === i ? -1 : i })
+      })),
+      picks: services.map(s => ({
+        title: s.title,
+        bg: pick === s.title ? "#C96F4E" : "transparent",
+        fg: pick === s.title ? "#F7F2E7" : "#16283C",
+        onPick: () => this.setState({ pick: s.title })
+      })),
+      name: this.state.name,
+      email: this.state.email,
+      msg: this.state.msg,
+      sent,
+      notSent: !sent,
+      onName: (e) => this.setState({ name: e.target.value }),
+      onEmail: (e) => this.setState({ email: e.target.value }),
+      onMsg: (e) => this.setState({ msg: e.target.value }),
+      onSend: () => this.setState({ sent: true })
+    };
+  }
+}
+</script>
+</body>
+</html>
