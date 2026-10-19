@@ -1,0 +1,165 @@
+/* Base styles and animations from the original design. */
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #f7f2e7;
+  color: #16283c;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: #16283c;
+}
+a:hover {
+  color: #a64f33;
+}
+::selection {
+  background: #c96f4e;
+  color: #f7f2e7;
+}
+@keyframes kdc-rise {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes kdc-wipe {
+  from {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+  }
+}
+@keyframes kdc-depth {
+  from {
+    opacity: 0;
+    transform: perspective(1200px) rotateX(9deg) translateY(56px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: perspective(1200px) rotateX(0deg) translateY(0) scale(1);
+  }
+}
+@keyframes kdc-rule {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes kdc-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes kdc-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-16px) rotate(-1deg);
+  }
+}
+@supports not (animation-timeline: view()) {
+  [data-kdc-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-kdc-reveal],
+  [data-kdc-marquee],
+  [data-kdc-float] {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+
+/* Header: full nav on wide screens, menu button on narrow ones. */
+.kdc-narrow {
+  display: none !important;
+}
+@media (max-width: 980px) {
+  .kdc-wide {
+    display: none !important;
+  }
+  .kdc-narrow {
+    display: flex !important;
+  }
+}
+
+/* Hover effects (the design's style-hover rules). */
+.hv-1:hover,
+.hv-1:focus-visible {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 16px 30px -12px rgba(201, 111, 78, 0.95) !important;
+}
+.hv-2:hover,
+.hv-2:focus-visible {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 26px 46px -16px rgba(201, 111, 78, 0.95) !important;
+}
+.hv-3:hover,
+.hv-3:focus-visible {
+  transform: translateY(-10px) rotateX(4deg) rotateY(-4deg) !important;
+}
+.hv-4:hover,
+.hv-4:focus-visible {
+  transform: translateY(-14px) rotateX(7deg) rotateY(-5deg) scale(1.02) !important;
+  box-shadow: 0 60px 90px -40px rgba(22, 40, 60, 0.75) !important;
+}
+.hv-5:hover,
+.hv-5:focus-visible {
+  transform: rotateY(0deg) rotateX(0deg) translateY(-6px) !important;
+}
+.hv-6:hover,
+.hv-6:focus-visible {
+  transform: translateY(-3px) !important;
+  background: #0f1e2e !important;
+  color: #f7f2e7 !important;
+}
+.hv-7:hover,
+.hv-7:focus-visible {
+  transform: rotateY(0deg) rotateX(0deg) rotateZ(0deg) translateY(-6px) !important;
+}
+.hv-8:hover,
+.hv-8:focus-visible {
+  transform: translateY(-6px) !important;
+  border-color: #c96f4e !important;
+  box-shadow: 0 30px 50px -34px rgba(22, 40, 60, 0.6) !important;
+}
+.hv-9:hover,
+.hv-9:focus-visible {
+  transform: rotateY(0deg) !important;
+}
+.hv-10:hover,
+.hv-10:focus-visible {
+  transform: translateY(-12px) rotateX(6deg) !important;
+  background: rgba(247, 242, 231, 0.09) !important;
+}
+.hv-11:hover,
+.hv-11:focus-visible {
+  color: #a64f33 !important;
+}
+.hv-12:hover,
+.hv-12:focus-visible {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 32px 56px -20px rgba(22, 40, 60, 0.8) !important;
+  color: #16283c !important;
+}
