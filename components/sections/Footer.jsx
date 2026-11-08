@@ -1,7 +1,7 @@
 import Image from "next/image";
 import markImg from "@/assets/images/kim-de-cuba-mark.png";
 
-export default function Footer({ t, mailto, contactEmail }) {
+export default function Footer({ t, mailto, contactEmail, whatsapp }) {
   return (
     <footer style={{ borderTop: "1px solid rgba(22,40,60,0.1)" }}>
       <div
@@ -67,6 +67,12 @@ export default function Footer({ t, mailto, contactEmail }) {
             fontSize: "15px",
           }}
         >
+          <span style={{ fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "#5A6B7A" }}>
+            WhatsApp
+          </span>
+          <a href={whatsapp.href} target="_blank" rel="noopener" style={{ textDecoration: "none", whiteSpace: "nowrap" }}>
+            {whatsapp.label}
+          </a>
           <span style={{ fontSize: "10px", letterSpacing: "0.22em", textTransform: "uppercase", color: "#5A6B7A" }}>
             Instagram
           </span>

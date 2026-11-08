@@ -315,7 +315,7 @@ export const SERVICES = {
       }
     ],
     "svcNote": "Every package is fully customizable to fit your business's unique needs. I work closely with each client to tailor the services, so you get exactly the support you need to reach your social media and branding goals.",
-    "svcContact": "Questions? Call or message Kim at"
+    "svcContact": "Questions? Message Kim on WhatsApp at"
   },
   "es": {
     "navServices": "Servicios",
@@ -632,6 +632,6 @@ export const SERVICES = {
       }
     ],
     "svcNote": "Cada paquete es completamente personalizable para adaptarse a las necesidades únicas de tu negocio. Trabajo de cerca con cada cliente para adaptar los servicios, asegurando que obtengas exactamente el apoyo que necesitas para alcanzar tus objetivos de redes sociales y branding.",
-    "svcContact": "¿Preguntas? Llama o escribe a Kim al"
+    "svcContact": "¿Preguntas? Escríbele a Kim por WhatsApp al"
   }
 };

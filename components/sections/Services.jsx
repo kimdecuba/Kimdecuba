@@ -134,7 +134,7 @@ const h4 = (size = "clamp(24px, 2.6vw, 32px)") => ({
   margin: "0 0 10px",
 });
 
-export default function Services({ t, s, webHref, launchHref, monthly, care }) {
+export default function Services({ t, s, whatsapp, webHref, launchHref, monthly, care }) {
   return (
     <section id="services" style={{ background: "#E6EAE0", position: "relative", overflow: "hidden" }}>
       <div
@@ -559,8 +559,8 @@ export default function Services({ t, s, webHref, launchHref, monthly, care }) {
         </p>
         <p style={{ fontSize: "13px", letterSpacing: "0.08em", color: "#3D5063", margin: "14px 0 0", textAlign: "center" }}>
           {s.svcContact}{" "}
-          <a href="tel:+2975925003" style={{ textDecoration: "none", whiteSpace: "nowrap" }}>
-            +297 592-5003
+          <a href={whatsapp.href} target="_blank" rel="noopener" style={{ textDecoration: "none", whiteSpace: "nowrap" }}>
+            {whatsapp.label}
           </a>
         </p>
       </div>

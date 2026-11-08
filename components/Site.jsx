@@ -73,6 +73,7 @@ export default function Site() {
   const contactEmail = siteConfig.contactEmail.trim();
   const url = siteConfig.bookingUrl.trim();
   const mailto = "mailto:" + contactEmail;
+  const whatsapp = { label: siteConfig.whatsapp, href: "https://wa.me/" + siteConfig.whatsapp.replace(/\D/g, "") };
   const bookHref = url || mailto + "?subject=" + encodeURIComponent(t.mailSubject);
   const bookTarget = url ? "_blank" : "_self";
   const book = { t, bookHref, bookTarget };
@@ -121,6 +122,7 @@ export default function Site() {
       <Services
         t={t}
         s={s}
+        whatsapp={whatsapp}
         webHref={mailWith(s.webMailSubject)}
         launchHref={mailWith(s.pkgMailSubject + s.launch.name)}
         monthly={s.monthly.map((m, i) => ({ ...m, ...PKG_SKINS[i], href: mailWith(s.pkgMailSubject + m.name) }))}
@@ -136,7 +138,7 @@ export default function Site() {
         }))}
       />
       <FinalCta {...book} finQs={wrap(t.finQs)} />
-      <Footer t={t} mailto={mailto} contactEmail={contactEmail} />
+      <Footer t={t} mailto={mailto} contactEmail={contactEmail} whatsapp={whatsapp} />
     </div>
   );
 }
