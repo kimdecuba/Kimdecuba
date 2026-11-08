@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { COPY } from "@/content/copy";
 import { SERVICES } from "@/content/services";
+import { EBOOK } from "@/content/ebook";
 import siteConfig from "@/site.config";
 import Header from "./sections/Header";
 import MobileMenu from "./sections/MobileMenu";
@@ -16,6 +17,7 @@ import WhoItsFor from "./sections/WhoItsFor";
 import About from "./sections/About";
 import HowItWorks from "./sections/HowItWorks";
 import Services from "./sections/Services";
+import Ebook from "./sections/Ebook";
 import Faq from "./sections/Faq";
 import FinalCta from "./sections/FinalCta";
 import Footer from "./sections/Footer";
@@ -91,6 +93,7 @@ export default function Site({ page = "home" }) {
   const bookTarget = url ? "_blank" : "_self";
   const book = { t, bookHref, bookTarget };
   const s = SERVICES[lang];
+  const e = EBOOK[lang];
   // Package buttons open a WhatsApp chat with a ready-made message naming the package.
   const waWith = (name) => whatsapp.href + "?text=" + encodeURIComponent(s.waMsg.replace("{name}", name));
 
@@ -115,8 +118,8 @@ export default function Site({ page = "home" }) {
         overflowX: "hidden",
       }}
     >
-      <Header t={t} s={s} onMenu={onMenu} {...langProps} />
-      {menu && <MobileMenu t={t} s={s} onMenu={onMenu} {...langProps} />}
+      <Header t={t} s={s} e={e} onMenu={onMenu} {...langProps} />
+      {menu && <MobileMenu t={t} s={s} e={e} onMenu={onMenu} {...langProps} />}
       {page === "home" && (
         <>
           <Hero {...book} />
@@ -134,6 +137,7 @@ export default function Site({ page = "home" }) {
             monthly={s.monthly.map((m, i) => ({ ...m, ...PKG_SKINS[i], href: waWith(m.name) }))}
             care={s.care.map((c, i) => ({ ...c, ...CARE_SKINS[i], href: waWith(c.tier + " " + c.name) }))}
           />
+          <Ebook e={e} buyHref={whatsapp.href + "?text=" + encodeURIComponent(e.waMsg)} />
         </>
       )}
       {page === "about" && (

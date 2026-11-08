@@ -1,0 +1,48 @@
+// Text for the ebook section, in English and Spanish.
+// The Buy button opens WhatsApp with `waMsg` already typed.
+export const EBOOK = {
+  en: {
+    navEbook: "Ebook",
+    k: "Ebook",
+    tag: "Guide & workbook · PDF",
+    title: "From Idea to Action",
+    sub: "A practical guide and workbook to turn your business idea into a clear starting point.",
+    insideH: "Inside",
+    inside: [
+      "Find your starting point",
+      "Describe your idea in one clear sentence",
+      "Product, service or online business?",
+      "Workbook exercises you fill in yourself",
+    ],
+    includes: "Includes the introduction and Chapter 1: Your Idea Starts Here.",
+    price: "$17",
+    priceNote: "Digital download (PDF)",
+    cta: "Buy on WhatsApp",
+    how: "Message Kim on WhatsApp to pay. Once payment is received, she'll send you the PDF.",
+    waMsg: "Hi Kim! I'd like to buy the ebook \"From Idea to Action\" ($17).",
+    coverBy: "Kim de Cuba",
+    coverKicker: "Guide & workbook",
+  },
+  es: {
+    navEbook: "Ebook",
+    k: "Ebook",
+    tag: "Guía y cuaderno de trabajo · PDF",
+    title: "From Idea to Action",
+    sub: "Una guía práctica con ejercicios para convertir tu idea de negocio en un punto de partida claro.",
+    insideH: "Incluye",
+    inside: [
+      "Descubre tu punto de partida",
+      "Describe tu idea en una frase clara",
+      "¿Producto, servicio o negocio en línea?",
+      "Ejercicios para completar tú mismo",
+    ],
+    includes: "Contiene la introducción y el Capítulo 1: Your Idea Starts Here. El ebook está en inglés.",
+    price: "$17",
+    priceNote: "Descarga digital (PDF)",
+    cta: "Comprar por WhatsApp",
+    how: "Escríbele a Kim por WhatsApp para pagar. Cuando recibe el pago, te envía el PDF.",
+    waMsg: "¡Hola Kim! Quiero comprar el ebook \"From Idea to Action\" ($17).",
+    coverBy: "Kim de Cuba",
+    coverKicker: "Guide & workbook",
+  },
+};

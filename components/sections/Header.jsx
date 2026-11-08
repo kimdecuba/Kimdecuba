@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import markImg from "@/assets/images/kim-de-cuba-mark.png";
 
-export default function Header({ t, s, onEn, enColor, enLine, onEs, esColor, esLine, onMenu }) {
+export default function Header({ t, s, e, onEn, enColor, enLine, onEs, esColor, esLine, onMenu }) {
   return (
     <header
       style={{
@@ -65,7 +65,7 @@ export default function Header({ t, s, onEn, enColor, enLine, onEs, esColor, esL
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "26px",
+            gap: "clamp(16px, 1.8vw, 26px)",
             fontSize: "11px",
             letterSpacing: "0.18em",
             textTransform: "uppercase",
@@ -83,6 +83,9 @@ export default function Header({ t, s, onEn, enColor, enLine, onEs, esColor, esL
           </Link>
           <Link href="/#services" style={{ textDecoration: "none" }}>
             {s.navServices}
+          </Link>
+          <Link href="/#ebook" style={{ textDecoration: "none" }}>
+            {e.navEbook}
           </Link>
           <Link href="/about#faq" style={{ textDecoration: "none" }}>
             {t.navFaq}
