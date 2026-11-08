@@ -157,6 +157,10 @@ a:hover {
 .hv-11:focus-visible {
   color: #a64f33 !important;
 }
+.hv-13:hover,
+.hv-13:focus-visible {
+  transform: translateY(-3px) !important;
+}
 .hv-12:hover,
 .hv-12:focus-visible {
   transform: translateY(-4px) !important;

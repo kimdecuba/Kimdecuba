@@ -1,7 +1,7 @@
 import Image from "next/image";
 import markImg from "@/assets/images/kim-de-cuba-mark.png";
 
-export default function Header({ t, onEn, enColor, enLine, onEs, esColor, esLine, onMenu }) {
+export default function Header({ t, s, onEn, enColor, enLine, onEs, esColor, esLine, onMenu }) {
   return (
     <header
       style={{
@@ -79,6 +79,9 @@ export default function Header({ t, onEn, enColor, enLine, onEs, esColor, esLine
           </a>
           <a href="#offer" style={{ textDecoration: "none" }}>
             Idea-to-Action
+          </a>
+          <a href="#services" style={{ textDecoration: "none" }}>
+            {s.navServices}
           </a>
           <a href="#faq" style={{ textDecoration: "none" }}>
             {t.navFaq}

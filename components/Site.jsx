@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { COPY, SKINS } from "@/content/copy";
+import { SERVICES } from "@/content/services";
 import siteConfig from "@/site.config";
 import Header from "./sections/Header";
 import MobileMenu from "./sections/MobileMenu";
@@ -16,12 +17,24 @@ import ActionPlan from "./sections/ActionPlan";
 import WhoItsFor from "./sections/WhoItsFor";
 import About from "./sections/About";
 import HowItWorks from "./sections/HowItWorks";
+import Services from "./sections/Services";
 import Faq from "./sections/Faq";
 import FinalCta from "./sections/FinalCta";
 import Footer from "./sections/Footer";
 
 const num = (i) => String(i + 1).padStart(2, "0");
 const wrap = (arr) => arr.map((text, i) => ({ text, num: num(i) }));
+
+// Card colours for the Services section.
+const PKG_SKINS = [
+  { bg: "#FFFFFF", fg: "#16283C", body: "#3D5063", accent: "#9A4A2E", line: "rgba(22,40,60,0.1)", ctaBg: "#16283C", ctaFg: "#F7F2E7" },
+  { bg: "#16283C", fg: "#F7F2E7", body: "#B9C7D4", accent: "#E8A184", line: "rgba(247,242,231,0.14)", ctaBg: "#A64F33", ctaFg: "#F7F2E7" },
+];
+const CARE_SKINS = [
+  { bg: "#FFFFFF", fg: "#16283C", body: "#3D5063", accent: "#9A4A2E", line: "rgba(22,40,60,0.1)", ctaBg: "#16283C", ctaFg: "#F7F2E7" },
+  { bg: "#FFFFFF", fg: "#16283C", body: "#3D5063", accent: "#9A4A2E", line: "rgba(22,40,60,0.1)", ctaBg: "#A64F33", ctaFg: "#F7F2E7" },
+  { bg: "#16283C", fg: "#F7F2E7", body: "#B9C7D4", accent: "#E8A184", line: "rgba(247,242,231,0.14)", ctaBg: "#F7F2E7", ctaFg: "#16283C" },
+];
 
 export default function Site() {
   const [lang, setLang] = useState("en");
@@ -63,6 +76,8 @@ export default function Site() {
   const bookHref = url || mailto + "?subject=" + encodeURIComponent(t.mailSubject);
   const bookTarget = url ? "_blank" : "_self";
   const book = { t, bookHref, bookTarget };
+  const s = SERVICES[lang];
+  const mailWith = (subject) => mailto + "?subject=" + encodeURIComponent(subject);
 
   const langProps = {
     onEn: () => setLang("en"),
@@ -85,8 +100,8 @@ export default function Site() {
         overflowX: "hidden",
       }}
     >
-      <Header t={t} onMenu={onMenu} {...langProps} />
-      {menu && <MobileMenu t={t} onMenu={onMenu} {...langProps} />}
+      <Header t={t} s={s} onMenu={onMenu} {...langProps} />
+      {menu && <MobileMenu t={t} s={s} onMenu={onMenu} {...langProps} />}
       <Hero {...book} />
       {siteConfig.showBand && <Band marquee={[...t.band, ...t.band, ...t.band, ...t.band].map((text) => ({ text }))} />}
       <Problem t={t} maybes={wrap(t.maybes)} />
@@ -103,6 +118,14 @@ export default function Site() {
       <WhoItsFor t={t} forList={t.forList.map((text, i) => ({ text, bg: i % 2 === 0 ? "#FFFFFF" : "#F7F2E7" }))} />
       <About t={t} pillarWords={t.pillarWords.map((text, i) => ({ text, sep: i < t.pillarWords.length - 1 }))} />
       <HowItWorks t={t} steps={t.steps.map((s, i) => ({ ...s, num: num(i) }))} />
+      <Services
+        t={t}
+        s={s}
+        webHref={mailWith(s.webMailSubject)}
+        launchHref={mailWith(s.pkgMailSubject + s.launch.name)}
+        monthly={s.monthly.map((m, i) => ({ ...m, ...PKG_SKINS[i], href: mailWith(s.pkgMailSubject + m.name) }))}
+        care={s.care.map((c, i) => ({ ...c, ...CARE_SKINS[i], href: mailWith(s.careMailSubject + c.name) }))}
+      />
       <Faq
         t={t}
         faqs={t.faqs.map((f, i) => ({

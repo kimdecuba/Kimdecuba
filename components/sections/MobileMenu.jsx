@@ -1,4 +1,4 @@
-export default function MobileMenu({ t, onMenu, onEn, enBg, onEs, esBg }) {
+export default function MobileMenu({ t, s, onMenu, onEn, enBg, onEs, esBg }) {
   return (
     <div
       style={{
@@ -78,6 +78,18 @@ export default function MobileMenu({ t, onMenu, onEn, enBg, onEs, esBg }) {
           }}
         >
           Idea-to-Action
+        </a>
+        <a
+          href="#services"
+          onClick={onMenu}
+          style={{
+            textDecoration: "none",
+            color: "#F7F2E7",
+            padding: "12px 0",
+            borderBottom: "1px solid rgba(247,242,231,0.14)",
+          }}
+        >
+          {s.navServices}
         </a>
         <a
           href="#faq"

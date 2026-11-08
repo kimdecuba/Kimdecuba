@@ -24,7 +24,7 @@ export default function Faq({ t, faqs }) {
             }}
           >
             <span style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "15px", letterSpacing: "0" }}>
-              10
+              11
             </span>
             {t.k10}
           </p>
