@@ -89,7 +89,7 @@ export default function About({ t, pillarWords }) {
             }}
           >
             <span style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "15px", letterSpacing: "0" }}>
-              08
+              01
             </span>
             {t.k8}
           </p>

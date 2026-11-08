@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { COPY, SKINS } from "@/content/copy";
+import { COPY } from "@/content/copy";
 import { SERVICES } from "@/content/services";
 import siteConfig from "@/site.config";
 import Header from "./sections/Header";
@@ -9,8 +9,6 @@ import MobileMenu from "./sections/MobileMenu";
 import Hero from "./sections/Hero";
 import Band from "./sections/Band";
 import Problem from "./sections/Problem";
-import Transformation from "./sections/Transformation";
-import WhatIDo from "./sections/WhatIDo";
 import PhotoStrip from "./sections/PhotoStrip";
 import Offer from "./sections/Offer";
 import ActionPlan from "./sections/ActionPlan";
@@ -36,8 +34,23 @@ const CARE_SKINS = [
   { bg: "#16283C", fg: "#F7F2E7", body: "#B9C7D4", accent: "#E8A184", line: "rgba(247,242,231,0.14)", ctaBg: "#F7F2E7", ctaFg: "#16283C" },
 ];
 
-export default function Site() {
-  const [lang, setLang] = useState("en");
+// page: "home" (the short homepage) or "about" (About Kim, How it works, Action plan, FAQ).
+export default function Site({ page = "home" }) {
+  const [lang, setLangState] = useState("en");
+  const setLang = (l) => {
+    setLangState(l);
+    try {
+      localStorage.setItem("kdc-lang", l);
+    } catch {}
+  };
+
+  useEffect(() => {
+    // Keep the chosen language when moving between pages.
+    try {
+      const saved = localStorage.getItem("kdc-lang");
+      if (saved === "en" || saved === "es") setLangState(saved);
+    } catch {}
+  }, []);
   const [open, setOpen] = useState(0);
   const [menu, setMenu] = useState(false);
 
@@ -78,7 +91,8 @@ export default function Site() {
   const bookTarget = url ? "_blank" : "_self";
   const book = { t, bookHref, bookTarget };
   const s = SERVICES[lang];
-  const mailWith = (subject) => mailto + "?subject=" + encodeURIComponent(subject);
+  // Package buttons open a WhatsApp chat with a ready-made message naming the package.
+  const waWith = (name) => whatsapp.href + "?text=" + encodeURIComponent(s.waMsg.replace("{name}", name));
 
   const langProps = {
     onEn: () => setLang("en"),
@@ -103,40 +117,46 @@ export default function Site() {
     >
       <Header t={t} s={s} onMenu={onMenu} {...langProps} />
       {menu && <MobileMenu t={t} s={s} onMenu={onMenu} {...langProps} />}
-      <Hero {...book} />
-      {siteConfig.showBand && <Band marquee={[...t.band, ...t.band, ...t.band, ...t.band].map((text) => ({ text }))} />}
-      <Problem t={t} maybes={wrap(t.maybes)} />
-      <Transformation t={t} beforeList={wrap(t.beforeList)} afterList={wrap(t.afterList)} />
-      <WhatIDo t={t} pillarCards={t.pillarCards.map((p, i) => ({ ...p, ...SKINS[i], num: num(i) }))} />
-      <PhotoStrip />
-      <Offer {...book} sessionList={wrap(t.sessionList)} leaveList={wrap(t.leaveList)} />
-      <ActionPlan
-        t={t}
-        outlineList={wrap(t.outlineList)}
-        planTop={t.planTop}
-        planSteps={wrap(t.planSteps).map((s, i) => ({ ...s, num: i + 1 + "." }))}
-      />
-      <WhoItsFor t={t} forList={t.forList.map((text, i) => ({ text, bg: i % 2 === 0 ? "#FFFFFF" : "#F7F2E7" }))} />
-      <About t={t} pillarWords={t.pillarWords.map((text, i) => ({ text, sep: i < t.pillarWords.length - 1 }))} />
-      <HowItWorks t={t} steps={t.steps.map((s, i) => ({ ...s, num: num(i) }))} />
-      <Services
-        t={t}
-        s={s}
-        whatsapp={whatsapp}
-        webHref={mailWith(s.webMailSubject)}
-        launchHref={mailWith(s.pkgMailSubject + s.launch.name)}
-        monthly={s.monthly.map((m, i) => ({ ...m, ...PKG_SKINS[i], href: mailWith(s.pkgMailSubject + m.name) }))}
-        care={s.care.map((c, i) => ({ ...c, ...CARE_SKINS[i], href: mailWith(s.careMailSubject + c.name) }))}
-      />
-      <Faq
-        t={t}
-        faqs={t.faqs.map((f, i) => ({
-          ...f,
-          isOpen: open === i,
-          sign: open === i ? "−" : "+",
-          onToggle: () => setOpen(open === i ? -1 : i),
-        }))}
-      />
+      {page === "home" && (
+        <>
+          <Hero {...book} />
+          {siteConfig.showBand && <Band marquee={[...t.band, ...t.band, ...t.band, ...t.band].map((text) => ({ text }))} />}
+          <Problem t={t} maybes={wrap(t.maybes)} />
+          <PhotoStrip />
+          <Offer {...book} sessionList={wrap(t.sessionList)} leaveList={wrap(t.leaveList)} />
+          <WhoItsFor t={t} forList={t.forList.map((text, i) => ({ text, bg: i % 2 === 0 ? "#FFFFFF" : "#F7F2E7" }))} />
+          <Services
+            t={t}
+            s={s}
+            whatsapp={whatsapp}
+            webHref={waWith(s.webH)}
+            launchHref={waWith(s.launch.name)}
+            monthly={s.monthly.map((m, i) => ({ ...m, ...PKG_SKINS[i], href: waWith(m.name) }))}
+            care={s.care.map((c, i) => ({ ...c, ...CARE_SKINS[i], href: waWith(c.tier + " " + c.name) }))}
+          />
+        </>
+      )}
+      {page === "about" && (
+        <>
+          <About t={t} pillarWords={t.pillarWords.map((text, i) => ({ text, sep: i < t.pillarWords.length - 1 }))} />
+          <HowItWorks t={t} steps={t.steps.map((s, i) => ({ ...s, num: num(i) }))} />
+          <ActionPlan
+            t={t}
+            outlineList={wrap(t.outlineList)}
+            planTop={t.planTop}
+            planSteps={wrap(t.planSteps).map((s, i) => ({ ...s, num: i + 1 + "." }))}
+          />
+          <Faq
+            t={t}
+            faqs={t.faqs.map((f, i) => ({
+              ...f,
+              isOpen: open === i,
+              sign: open === i ? "−" : "+",
+              onToggle: () => setOpen(open === i ? -1 : i),
+            }))}
+          />
+        </>
+      )}
       <FinalCta {...book} finQs={wrap(t.finQs)} />
       <Footer t={t} mailto={mailto} contactEmail={contactEmail} whatsapp={whatsapp} />
     </div>

@@ -44,7 +44,7 @@ export default function ActionPlan({ t, outlineList, planTop, planSteps }) {
             }}
           >
             <span style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "15px", letterSpacing: "0" }}>
-              06
+              03
             </span>
             {t.k6}
           </p>

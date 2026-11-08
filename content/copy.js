@@ -172,7 +172,7 @@ export const COPY = {
       },
       {
         q: "Do you also build websites and manage social media?",
-        a: "Yes. Besides the Idea-to-Action Session, I create websites for clients and offer social media packages, from a one-time launch package to monthly management. See Services above for what each one includes.",
+        a: "Yes. Besides the Idea-to-Action Session, I create websites for clients and offer social media packages, from a one-time launch package to monthly management. See the Services section on the homepage for what each one includes.",
       },
     ],
     finH: "You don't need to have everything figured out. You just need to know you're ready to start.",
@@ -361,7 +361,7 @@ export const COPY = {
       },
       {
         q: "¿También creas sitios web y gestionas redes sociales?",
-        a: "Sí. Además de la Sesión Idea-to-Action, creo sitios web para clientes y ofrezco paquetes de redes sociales, desde un paquete único de lanzamiento hasta gestión mensual. Mira la sección de Servicios para ver qué incluye cada uno.",
+        a: "Sí. Además de la Sesión Idea-to-Action, creo sitios web para clientes y ofrezco paquetes de redes sociales, desde un paquete único de lanzamiento hasta gestión mensual. Mira la sección de Servicios en la página de inicio para ver qué incluye cada uno.",
       },
     ],
     finH: "No necesitas tenerlo todo resuelto. Solo necesitas saber que estás listo para empezar.",

@@ -1,3 +1,4 @@
+import Link from "next/link";
 export default function MobileMenu({ t, s, onMenu, onEn, enBg, onEs, esBg }) {
   return (
     <div
@@ -43,8 +44,8 @@ export default function MobileMenu({ t, s, onMenu, onEn, enBg, onEs, esBg }) {
           fontSize: "clamp(30px, 9vw, 46px)",
         }}
       >
-        <a
-          href="#top"
+        <Link
+          href="/"
           onClick={onMenu}
           style={{
             textDecoration: "none",
@@ -54,9 +55,9 @@ export default function MobileMenu({ t, s, onMenu, onEn, enBg, onEs, esBg }) {
           }}
         >
           {t.navHome}
-        </a>
-        <a
-          href="#about"
+        </Link>
+        <Link
+          href="/about"
           onClick={onMenu}
           style={{
             textDecoration: "none",
@@ -66,9 +67,9 @@ export default function MobileMenu({ t, s, onMenu, onEn, enBg, onEs, esBg }) {
           }}
         >
           {t.navAbout}
-        </a>
-        <a
-          href="#offer"
+        </Link>
+        <Link
+          href="/#offer"
           onClick={onMenu}
           style={{
             textDecoration: "none",
@@ -78,9 +79,9 @@ export default function MobileMenu({ t, s, onMenu, onEn, enBg, onEs, esBg }) {
           }}
         >
           Idea-to-Action
-        </a>
-        <a
-          href="#services"
+        </Link>
+        <Link
+          href="/#services"
           onClick={onMenu}
           style={{
             textDecoration: "none",
@@ -90,9 +91,9 @@ export default function MobileMenu({ t, s, onMenu, onEn, enBg, onEs, esBg }) {
           }}
         >
           {s.navServices}
-        </a>
-        <a
-          href="#faq"
+        </Link>
+        <Link
+          href="/about#faq"
           onClick={onMenu}
           style={{
             textDecoration: "none",
@@ -102,7 +103,7 @@ export default function MobileMenu({ t, s, onMenu, onEn, enBg, onEs, esBg }) {
           }}
         >
           {t.navFaq}
-        </a>
+        </Link>
       </nav>
       <div style={{ display: "flex", gap: "14px", marginTop: "36px" }}>
         <button

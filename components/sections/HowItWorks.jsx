@@ -33,7 +33,7 @@ export default function HowItWorks({ t, steps }) {
           }}
         >
           <span style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "15px", letterSpacing: "0" }}>
-            09
+            02
           </span>
           {t.k9}
         </p>

@@ -39,7 +39,7 @@ export default function Problem({ t, maybes }) {
             }}
           >
             <span style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "15px", letterSpacing: "0" }}>
-              02
+              01
             </span>
             {t.k2}
           </p>

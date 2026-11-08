@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Image from "next/image";
 import markImg from "@/assets/images/kim-de-cuba-mark.png";
 
@@ -24,8 +25,8 @@ export default function Header({ t, s, onEn, enColor, enLine, onEs, esColor, esL
           gap: "16px",
         }}
       >
-        <a
-          href="#top"
+        <Link
+          href="/"
           style={{ textDecoration: "none", display: "flex", alignItems: "center", gap: "13px", flexShrink: "0" }}
         >
           <Image
@@ -58,7 +59,7 @@ export default function Header({ t, s, onEn, enColor, enLine, onEs, esColor, esL
               {t.tagline}
             </span>
           </span>
-        </a>
+        </Link>
         <nav
           className="kdc-wide"
           style={{
@@ -71,21 +72,21 @@ export default function Header({ t, s, onEn, enColor, enLine, onEs, esColor, esL
             whiteSpace: "nowrap",
           }}
         >
-          <a href="#top" style={{ textDecoration: "none" }}>
+          <Link href="/" style={{ textDecoration: "none" }}>
             {t.navHome}
-          </a>
-          <a href="#about" style={{ textDecoration: "none" }}>
+          </Link>
+          <Link href="/about" style={{ textDecoration: "none" }}>
             {t.navAbout}
-          </a>
-          <a href="#offer" style={{ textDecoration: "none" }}>
+          </Link>
+          <Link href="/#offer" style={{ textDecoration: "none" }}>
             Idea-to-Action
-          </a>
-          <a href="#services" style={{ textDecoration: "none" }}>
+          </Link>
+          <Link href="/#services" style={{ textDecoration: "none" }}>
             {s.navServices}
-          </a>
-          <a href="#faq" style={{ textDecoration: "none" }}>
+          </Link>
+          <Link href="/about#faq" style={{ textDecoration: "none" }}>
             {t.navFaq}
-          </a>
+          </Link>
           <span style={{ display: "flex", alignItems: "center", gap: "9px" }}>
             <button
               onClick={onEn}

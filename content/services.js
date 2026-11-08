@@ -143,7 +143,8 @@ export const SERVICES = {
     ],
     "smH": "Social media packages",
     "smP": "From launching your brand from scratch to managing your accounts every month. Choose the level of support that fits where your business is right now.",
-    "pkgCta": "Ask about this plan",
+    "pkgCta": "Ask on WhatsApp",
+    "waMsg": "Hi Kim! I'm interested in the {name}.",
     "pkgMailSubject": "Social media package: ",
     "launch": {
       "tier": "Starter package",
@@ -460,7 +461,8 @@ export const SERVICES = {
     ],
     "smH": "Paquetes de redes sociales",
     "smP": "Desde lanzar tu marca desde cero hasta gestionar tus cuentas cada mes. Elige el nivel de apoyo que se ajusta a donde está tu negocio ahora.",
-    "pkgCta": "Consultar este plan",
+    "pkgCta": "Consultar por WhatsApp",
+    "waMsg": "¡Hola Kim! Me interesa el {name}.",
     "pkgMailSubject": "Paquete de redes sociales: ",
     "launch": {
       "tier": "Paquete inicial",

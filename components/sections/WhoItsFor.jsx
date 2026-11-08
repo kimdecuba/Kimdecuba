@@ -22,7 +22,7 @@ export default function WhoItsFor({ t, forList }) {
           }}
         >
           <span style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "15px", letterSpacing: "0" }}>
-            07
+            03
           </span>
           {t.k7}
         </p>

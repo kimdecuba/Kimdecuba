@@ -159,7 +159,7 @@ export default function Services({ t, s, whatsapp, webHref, launchHref, monthly,
         }}
       >
         <p style={{ ...label("#9A4A2E", "0 0 24px"), display: "flex", alignItems: "center", gap: "12px" }}>
-          <span style={{ fontFamily: serif, fontSize: "15px", letterSpacing: "0" }}>10</span>
+          <span style={{ fontFamily: serif, fontSize: "15px", letterSpacing: "0" }}>04</span>
           {s.svcK}
         </p>
         <h2

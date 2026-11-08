@@ -37,7 +37,7 @@ export default function Offer({ t, sessionList, leaveList, bookHref, bookTarget 
             }}
           >
             <span style={{ fontFamily: "var(--font-serif), Georgia, serif", fontSize: "15px", letterSpacing: "0" }}>
-              05
+              02
             </span>
             {t.k5}
           </p>
